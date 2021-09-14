@@ -9,8 +9,10 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'show']);
 Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('prodDelete');
-Route::get('product/form/{id?}', [ProductController::class, 'form'])->name('product.form');
-Route::post('product/save', [ProductController::class, 'save'])->name('product.save');
+
+Route::get('test',function(){
+    return 'testing';
+});
 
 Route::get('/brands', [BrandController::class, 'show']);
 Route::get('/brand/delete/{id}', [BrandController::class, 'delete'])->name('brandDelete');
