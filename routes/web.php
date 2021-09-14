@@ -19,7 +19,7 @@ Route::post('brand/save', [BrandController::class, 'save'])->name('brand.save');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-use App\Http\Controllers\InvoiceController;
-Route::get('/invoices',[InvoiceController::class, 'show']);
+//use App\Http\Controllers\InvoiceController;
+//Route::get('/invoices',[InvoiceController::class, 'show']);
