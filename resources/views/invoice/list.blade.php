@@ -4,6 +4,7 @@
 @section('encabezado','Invoices')
 
 @section('content')
+<a class="btn btn-primary" href="{{ route('invoice.form') }}">Nueva Factura</a>
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -54,12 +55,17 @@
                         <div class="row">
                             <div class="col-sm-6"></div>
                             <div class="col-sm-3">Subtotal:</div>
-                            <div class="col-sm-3">{{ $invoice->subtotal }}</div>
+                            <div class="col-sm-3">{{ number_format($invoice->subtotal,0,",",".") }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-3">IVA:</div>
+                            <div class="col-sm-3">{{ number_format($invoice->total-$invoice->subtotal,0,",",".") }}</div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6"></div>
                             <div class="col-sm-3">Total:</div>
-                            <div class="col-sm-3">{{ $invoice->total }}</div>
+                            <div class="col-sm-3">{{ number_format($invoice->total,0,",",".") }}</div>
                         </div>
                     </div>
                     <div class="modal-footer">
